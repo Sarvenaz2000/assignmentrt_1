@@ -1,0 +1,156 @@
+\hypertarget{distance__node_8cpp}{}\doxysection{distance\+\_\+node.\+cpp File Reference}
+\label{distance__node_8cpp}\index{distance\_node.cpp@{distance\_node.cpp}}
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/\+Twist.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+Float32.\+h$>$}\newline
+{\ttfamily \#include $<$turtlesim/\+Pose.\+h$>$}\newline
+{\ttfamily \#include $<$assignment1\+\_\+rt/distance.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for distance\+\_\+node.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{distance__node_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{distance__node_8cpp_a9df5b194e91cee8f60bf66de6c31cc23}{turtle1\+Pose\+Callback}} (const turtlesim\+::\+Pose\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em Callback function for turtle1\textquotesingle{}s pose updates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{distance__node_8cpp_af8f5c80ded86165f9faaf2a529b12d01}{turtle2\+Pose\+Callback}} (const turtlesim\+::\+Pose\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em Callback function for turtle2\textquotesingle{}s pose updates and distance calculation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{distance__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Main function to initialize the ROS node and set up subscribers/publishers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Publisher \mbox{\hyperlink{distance__node_8cpp_aca10e25faa94589e8f7dc10845abd1a0}{pub\+\_\+turtle1}}
+\begin{DoxyCompactList}\small\item\em Global publisher for turtle1 pose updates. \end{DoxyCompactList}\item 
+ros\+::\+Publisher \mbox{\hyperlink{distance__node_8cpp_a2beb12dd3123424a31990aebcd23133c}{pub\+\_\+turtle2}}
+\begin{DoxyCompactList}\small\item\em Global publisher for turtle2 pose updates. \end{DoxyCompactList}\item 
+ros\+::\+Publisher \mbox{\hyperlink{distance__node_8cpp_aef7b8ec29e5535d8b6f04407c952fac4}{pub\+\_\+distance}}
+\begin{DoxyCompactList}\small\item\em Global publisher for the calculated distance. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{distance__node_8cpp_a386ca21344ebf1087871f54d8e89f93a}{turtle1\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em Stores the x-\/coordinate of turtle1. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{distance__node_8cpp_af699f1ae0d9eb8f524d8820a806f1a1a}{turtle1\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em Stores the y-\/coordinate of turtle1. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{distance__node_8cpp_a376acef8954eadc70f4b55e8e0588e13}{threshold}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em Distance threshold for stopping turtles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{distance__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{distance__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{distance\_node.cpp@{distance\_node.cpp}!main@{main}}
+\index{main@{main}!distance\_node.cpp@{distance\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Main function to initialize the ROS node and set up subscribers/publishers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count. \\
+\hline
+{\em argv} & Argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Execution status. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{distance__node_8cpp_a9df5b194e91cee8f60bf66de6c31cc23}\label{distance__node_8cpp_a9df5b194e91cee8f60bf66de6c31cc23}} 
+\index{distance\_node.cpp@{distance\_node.cpp}!turtle1PoseCallback@{turtle1PoseCallback}}
+\index{turtle1PoseCallback@{turtle1PoseCallback}!distance\_node.cpp@{distance\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{turtle1PoseCallback()}{turtle1PoseCallback()}}
+{\footnotesize\ttfamily void turtle1\+Pose\+Callback (\begin{DoxyParamCaption}\item[{const turtlesim\+::\+Pose\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback function for turtle1\textquotesingle{}s pose updates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Pose message from turtlesim.\\
+\hline
+\end{DoxyParams}
+Updates the global variables storing turtle1\textquotesingle{}s position. \mbox{\Hypertarget{distance__node_8cpp_af8f5c80ded86165f9faaf2a529b12d01}\label{distance__node_8cpp_af8f5c80ded86165f9faaf2a529b12d01}} 
+\index{distance\_node.cpp@{distance\_node.cpp}!turtle2PoseCallback@{turtle2PoseCallback}}
+\index{turtle2PoseCallback@{turtle2PoseCallback}!distance\_node.cpp@{distance\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{turtle2PoseCallback()}{turtle2PoseCallback()}}
+{\footnotesize\ttfamily void turtle2\+Pose\+Callback (\begin{DoxyParamCaption}\item[{const turtlesim\+::\+Pose\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback function for turtle2\textquotesingle{}s pose updates and distance calculation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Pose message from turtlesim.\\
+\hline
+\end{DoxyParams}
+Calculates the distance between turtle1 and turtle2 and publishes it. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{distance__node_8cpp_aef7b8ec29e5535d8b6f04407c952fac4}\label{distance__node_8cpp_aef7b8ec29e5535d8b6f04407c952fac4}} 
+\index{distance\_node.cpp@{distance\_node.cpp}!pub\_distance@{pub\_distance}}
+\index{pub\_distance@{pub\_distance}!distance\_node.cpp@{distance\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{pub\_distance}{pub\_distance}}
+{\footnotesize\ttfamily ros\+::\+Publisher pub\+\_\+distance}
+
+
+
+Global publisher for the calculated distance. 
+
+\mbox{\Hypertarget{distance__node_8cpp_aca10e25faa94589e8f7dc10845abd1a0}\label{distance__node_8cpp_aca10e25faa94589e8f7dc10845abd1a0}} 
+\index{distance\_node.cpp@{distance\_node.cpp}!pub\_turtle1@{pub\_turtle1}}
+\index{pub\_turtle1@{pub\_turtle1}!distance\_node.cpp@{distance\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{pub\_turtle1}{pub\_turtle1}}
+{\footnotesize\ttfamily ros\+::\+Publisher pub\+\_\+turtle1}
+
+
+
+Global publisher for turtle1 pose updates. 
+
+\mbox{\Hypertarget{distance__node_8cpp_a2beb12dd3123424a31990aebcd23133c}\label{distance__node_8cpp_a2beb12dd3123424a31990aebcd23133c}} 
+\index{distance\_node.cpp@{distance\_node.cpp}!pub\_turtle2@{pub\_turtle2}}
+\index{pub\_turtle2@{pub\_turtle2}!distance\_node.cpp@{distance\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{pub\_turtle2}{pub\_turtle2}}
+{\footnotesize\ttfamily ros\+::\+Publisher pub\+\_\+turtle2}
+
+
+
+Global publisher for turtle2 pose updates. 
+
+\mbox{\Hypertarget{distance__node_8cpp_a376acef8954eadc70f4b55e8e0588e13}\label{distance__node_8cpp_a376acef8954eadc70f4b55e8e0588e13}} 
+\index{distance\_node.cpp@{distance\_node.cpp}!threshold@{threshold}}
+\index{threshold@{threshold}!distance\_node.cpp@{distance\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{threshold}{threshold}}
+{\footnotesize\ttfamily float threshold = 1.\+0}
+
+
+
+Distance threshold for stopping turtles. 
+
+\mbox{\Hypertarget{distance__node_8cpp_a386ca21344ebf1087871f54d8e89f93a}\label{distance__node_8cpp_a386ca21344ebf1087871f54d8e89f93a}} 
+\index{distance\_node.cpp@{distance\_node.cpp}!turtle1\_x@{turtle1\_x}}
+\index{turtle1\_x@{turtle1\_x}!distance\_node.cpp@{distance\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{turtle1\_x}{turtle1\_x}}
+{\footnotesize\ttfamily float turtle1\+\_\+x}
+
+
+
+Stores the x-\/coordinate of turtle1. 
+
+\mbox{\Hypertarget{distance__node_8cpp_af699f1ae0d9eb8f524d8820a806f1a1a}\label{distance__node_8cpp_af699f1ae0d9eb8f524d8820a806f1a1a}} 
+\index{distance\_node.cpp@{distance\_node.cpp}!turtle1\_y@{turtle1\_y}}
+\index{turtle1\_y@{turtle1\_y}!distance\_node.cpp@{distance\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{turtle1\_y}{turtle1\_y}}
+{\footnotesize\ttfamily float turtle1\+\_\+y}
+
+
+
+Stores the y-\/coordinate of turtle1. 
+
