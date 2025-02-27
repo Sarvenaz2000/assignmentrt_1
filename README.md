@@ -6,7 +6,7 @@ This repository contains the assignment work for the **Research Track** course, 
 **Sarvenaz Ashoori** <br>
 **ID: 6878764**
 
-https://sarvenaz2000.github.io/assignmentrt_1/
+[I am lazy](https://sarvenaz2000.github.io/assignmentrt_1/)
 ## Introduction
 This repository provides a ROS package that includes two primary nodes:
 -  **User Interface node**
